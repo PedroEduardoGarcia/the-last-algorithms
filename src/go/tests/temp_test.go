@@ -6,13 +6,17 @@ import (
 )
 
 func TestAdd(t *testing.T) {
-	if result := code.Add(1, 2); result != 3 {
-		t.Errorf("Add(1, 2) = %d; want 3", result)
+	arr := []any{10, 568, "hello", 45.23, 111}
+	if result := code.LinearSearch(&arr, "world"); result != false {
+		t.Errorf("LinearSearch(arr, 'world') = %v; want false", result)
 	}
-	if result := code.Add(-1, 1); result != 0 {
-		t.Errorf("Add(-1, 1) = %d; want 0", result)
+	if result := code.LinearSearch(&arr, 11); result != false {
+		t.Errorf("LinearSearch(arr,11) = %v; want false", result)
 	}
-	if result := code.Add(-1, -1); result != -2 {
-		t.Errorf("Add(-1, -1) = %d; want -2", result)
+	if result := code.LinearSearch(&arr, "hello"); result != true {
+		t.Errorf("LinearSearch(arr, 'hello') = %v; want true", result)
+	}
+	if result := code.LinearSearch(&arr, 45.23); result != true {
+		t.Errorf("LinearSearch(arr, 45.23) = %v; want true", result)
 	}
 }
