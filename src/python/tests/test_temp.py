@@ -6,7 +6,7 @@ class TestLinearSerch(unittest.TestCase):
         arr = [10, "hello", 12, 45.23, 111]
         self.assertTrue(linear_search(arr, "hello"))
         self.assertFalse(linear_search(arr, 11))
-        self.assertFalse(linear_search(arr, "world"))
+        self.assertFalse(linear_search(arr, "not_in_array"))
         self.assertTrue(linear_search(arr, 45.23))
 
 if __name__ == '__main__':
