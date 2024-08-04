@@ -1,11 +1,13 @@
 import unittest
-from code import add
+from code import linear_search
 
-class TestAddFunction(unittest.TestCase):
-    def test_add(self):
-        self.assertEqual(add(1, 2), 3)
-        self.assertEqual(add(-1, 1), 0)
-        self.assertEqual(add(-1, -1), -2)
+class TestLinearSerch(unittest.TestCase):
+    def test_linear_search(self):
+        arr = [10, "hello", 12, 45.23, 111]
+        self.assertTrue(linear_search(arr, "hello"))
+        self.assertFalse(linear_search(arr, 11))
+        self.assertFalse(linear_search(arr, "world"))
+        self.assertTrue(linear_search(arr, 45.23))
 
 if __name__ == '__main__':
     unittest.main()

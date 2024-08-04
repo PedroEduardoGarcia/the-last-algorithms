@@ -1,1 +1,1 @@
-from .temp import add
+from .temp import linear_search
